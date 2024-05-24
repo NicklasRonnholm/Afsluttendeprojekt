@@ -38,7 +38,7 @@ def change_guest_network_password(router_ip, router_password, new_password):
     new_password_field = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[1]/div/div[2]/div[2]/div/div[2]/div[1]/div[3]/div[2]/div[2]/div[2]/div[2]/div/div/div[1]/div[6]/div[2]/div/div[2]/div[1]/span[2]/input")
     driver.execute_script("arguments[0].scrollIntoView();", new_password_field)
     time.sleep(1)
-    new_password_field.clear()  # Clear existing password
+    new_password_field.clear()
     new_password_field.send_keys(new_password)
 
     save_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div/div[1]/div/div[2]/div[2]/div/div[2]/div[2]/div[3]/div[2]/div[1]/a")))
